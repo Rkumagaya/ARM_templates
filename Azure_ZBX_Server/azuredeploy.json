@@ -169,7 +169,6 @@
             "version": "latest"
           },
           "osDisk": {
-            "osType": "Linux",
 	    "name": "osdisk",
             "createOption": "FromImage",
             "vhd": {
