@@ -144,9 +144,9 @@
       "name": "[variables('vmName')]",
       "location": "[parameters('location')]",
       "plan": {
-        "name": "axs4sp4licazu",
+        "name": "axs7licazu",
         "publisher": "miracl_linux",
-        "product": "asianux-server-4-sp4"
+        "product": "asianux-server-7"
       },
       "dependsOn": [
         "[concat('Microsoft.Storage/storageAccounts/', parameters('newStorageAccountName'))]",
@@ -169,7 +169,7 @@
             "version": "latest"
           },
           "osDisk": {
-	    "name": "MyZBXVM",
+	    "name": "osdisk",
             "createOption": "FromImage",
             "vhd": {
               "uri": "[concat('http://',parameters('newStorageAccountName'),'.blob.core.windows.net/',variables('vmStorageAccountContainerName'),'/',variables('OSDiskName'),'.vhd')]"
