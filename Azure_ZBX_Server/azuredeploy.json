@@ -169,7 +169,7 @@
             "version": "latest"
           },
           "osDisk": {
-	    "name": "osdisk",
+	    "name": "MyZBXVM",
             "createOption": "FromImage",
             "vhd": {
               "uri": "[concat('http://',parameters('newStorageAccountName'),'.blob.core.windows.net/',variables('vmStorageAccountContainerName'),'/',variables('OSDiskName'),'.vhd')]"
