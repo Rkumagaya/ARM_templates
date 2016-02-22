@@ -169,7 +169,7 @@
             "version": "latest"
           },
           "osDisk": {
-            "osType":"Linux",
+            "osType": "Linux",
 	    "name": "Miracle",
             "vhd": {
               "uri": "[concat('http://',parameters('newStorageAccountName'),'.blob.core.windows.net/',variables('vmStorageAccountContainerName'),'/',variables('OSDiskName'),'.vhd')]"
