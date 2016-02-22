@@ -200,9 +200,9 @@
         "typeHandlerVersion": "1.2",
         "settings": {
           "fileUris": [
-            "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/apache2-on-ubuntu-vm/install_apache.sh"
+            "https://raw.githubusercontent.com/Rkumagaya/ARM_templates/master/Azure_ZBX_Server/install_zbx.sh"
           ],
-          "commandToExecute": "sh install_apache.sh"
+          "commandToExecute": "sh install_zbx.sh"
         }
       }
     }
