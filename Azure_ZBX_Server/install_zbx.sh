@@ -12,7 +12,6 @@ firewall-cmd --zone=public --add-port=10051/tcp --permanent
 firewall-cmd --zone=public --add-port=162/udp --permanent
 firewall-cmd --zone=public --add-port=10050/tcp --permanent
 
-
 #cnfigure mariadb
 sed -i -e "4i innodb_file_per_table" /etc/my.cnf
 sed -i -e "4i innodb_log_buffer_size=16M" /etc/my.cnf
@@ -33,11 +32,23 @@ mysql zabbix -uzabbix -pzabbix < /usr/share/doc/zabbix-server-mysql-2.2.*/mysql/
 mysql zabbix -uzabbix -pzabbix < /usr/share/doc/zabbix-server-mysql-2.2.*/mysql/images.sql
 mysql zabbix -uzabbix -pzabbix < /usr/share/doc/zabbix-server-mysql-2.2.*/mysql/data.sql
 
-
 #configure zabbix
-sed -i -e "/^DBName=/s/DBName=/DBName=zabbix/" /etc/zabbix/zabbix_server.conf
-sed -i -e "/^DBUser=/s/DBUser=/DBUser=zabbix/" /etc/zabbix/zabbix_server.conf
+sed -i -e "/^DBName=/s/DBName=.*/DBName=zabbix/" /etc/zabbix/zabbix_server.conf
+sed -i -e "/^DBUser=/s/DBUser=.*/DBUser=zabbix/" /etc/zabbix/zabbix_server.conf
 sed -i -e "/^# DBPassword/a DBPassword=zabbix" /etc/zabbix/zabbix_server.conf
 
 chown zabbix:zabbix /etc/zabbix/zabbix_server.conf
 chmod 400 /etc/zabbix/zabbix_server.conf
+
+systemctl enable zabbix-server
+systemctl enable zabbix-agent
+systemctl start zabbix-server
+systemctl start zabbix-agent
+
+#configure httpd
+sed -i -e 's/^#//' /etc/httpd/conf.d/zabbix.conf
+
+systemctl enable httpd
+systemctl start httpd
+
+
