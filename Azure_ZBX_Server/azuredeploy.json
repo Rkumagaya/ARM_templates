@@ -150,7 +150,7 @@
       "properties": {
       "securityRules": [
         {
-          "name": "rdp-rule",
+          "name": "zbxs-rule",
           "properties": {
             "description": "Allow ZBX Server",
        	    "protocol": "Tcp",
@@ -164,7 +164,7 @@
      	  }
     	},
      	{
-	  "name": "web-rule",
+	  "name": "zbxa-rule",
 	  "properties": {
      	    "description": "Allow ZBX Agent",
 	    "protocol": "Tcp",
