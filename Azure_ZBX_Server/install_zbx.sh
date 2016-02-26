@@ -28,9 +28,9 @@ systemctl start mariadb
 
 mysql -uroot -e "create database zabbix; grant all privileges on zabbix.* to zabbix@localhost identified by 'zabbix';"
 
-mysql zabbix -uzabbix -pzabbix < /usr/share/doc/zabbix-server-mysql-2.2.*/mysql/schema.sql
-mysql zabbix -uzabbix -pzabbix < /usr/share/doc/zabbix-server-mysql-2.2.*/mysql/images.sql
-mysql zabbix -uzabbix -pzabbix < /usr/share/doc/zabbix-server-mysql-2.2.*/mysql/data.sql
+mysql zabbix -uzabbix -pzabbix < /usr/share/doc/zabbix-server-mysql-2.2.11/mysql/schema.sql
+mysql zabbix -uzabbix -pzabbix < /usr/share/doc/zabbix-server-mysql-2.2.11/mysql/images.sql
+mysql zabbix -uzabbix -pzabbix < /usr/share/doc/zabbix-server-mysql-2.2.11/mysql/data.sql
 
 #configure zabbix
 sed -i -e "/^DBName=/s/DBName=.*/DBName=zabbix/" /etc/zabbix/zabbix_server.conf
