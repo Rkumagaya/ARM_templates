@@ -19,14 +19,14 @@ sed -i -e "4i innodb_buffer_pool_size=$(expr $(free|grep '^Mem'|awk '{print $2}'
 sed -i -e "4i innodb_log_file_size=$(expr $(free|grep '^Mem'|awk '{print $2}') / 10)" /etc/my.cnf
 sed -i -e "4i innodb_log_files_in_group=2" /etc/my.cnf
 sed -i -e "4i key_buffer_size=$(expr $(free|grep '^Mem'|awk '{print $2}') / 10)" /etc/my.cnf
-sed -i -e "4i max_allowed_packet=16MB" /etc/my.cnfi
-sed -i -e "4i skip-character-set-client-handshake" /etc/my.cnfi
-sed -i -e "4i character-set-server=utf8" /etc/my.cnfi
+sed -i -e "4i max_allowed_packet=16MB" /etc/my.cnf
+sed -i -e "4i skip-character-set-client-handshake" /etc/my.cnf
+sed -i -e "4i character-set-server=utf8" /etc/my.cnf
 
 systemctl enable mariadb
 systemctl start mariadb
 
-mysql -uroot -e "create database zabbix; grant all privileges on zabbix.* to zabbix@localhost identified by 'zabbix'; flush privileges;"
+mysql -uroot -e "create database zabbix; grant all privileges on zabbix.* to zabbix@localhost identified by 'zabbix';"
 
 mysql zabbix -uzabbix -pzabbix < /usr/share/doc/zabbix-server-mysql-2.2.*/mysql/schema.sql
 mysql zabbix -uzabbix -pzabbix < /usr/share/doc/zabbix-server-mysql-2.2.*/mysql/images.sql
