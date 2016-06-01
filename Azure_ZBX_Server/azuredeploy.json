@@ -191,9 +191,9 @@
       "name": "[variables('vmName')]",
       "location": "[parameters('location')]",
       "plan": {
-        "name": "axs7licazu",
-        "publisher": "miracl_linux",
-        "product": "asianux-server-7"
+        "name": "[variables('OSVersion')]",
+        "publisher": "[variables('imagePublisher')]",
+        "product": "[variables('imageOffer')]"
       },
       "dependsOn": [
         "[concat('Microsoft.Storage/storageAccounts/', parameters('newStorageAccountName'))]",
