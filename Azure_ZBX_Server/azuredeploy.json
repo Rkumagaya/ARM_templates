@@ -39,19 +39,10 @@
       "metadata": {
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
-    },
-    "OSVersion": {
-      "type": "string",
-      "defaultValue": "axs7licazu",
-      "allowedValues": [
-        "axs7licazu"
-      ],
-      "metadata": {
-        "description": "The Asianux version for the VM. Allowed values: Asianux 7."
-      }
     }
   },
   "variables": {
+    "OSVersion": "axs7sp1licazu",
     "imagePublisher": "miraclelinux",
     "imageOffer": "asianux-server-7-sp1",
     "OSDiskName": "axs7isp1licazu",
@@ -221,7 +212,7 @@
           "imageReference": {
             "publisher": "[variables('imagePublisher')]",
             "offer": "[variables('imageOffer')]",
-            "sku": "[parameters('OSVersion')]",
+            "sku": "[variables('OSVersion')]",
             "version": "latest"
           },
           "osDisk": {
