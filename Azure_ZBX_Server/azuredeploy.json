@@ -52,9 +52,9 @@
     }
   },
   "variables": {
-    "imagePublisher": "miracl_linux",
-    "imageOffer": "asianux-server-7",
-    "OSDiskName": "axs7licazu",
+    "imagePublisher": "miraclelinux",
+    "imageOffer": "asianux-server-7-sp1",
+    "OSDiskName": "axs7isp1licazu",
     "nicName": "myVMNic",
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "Subnet",
